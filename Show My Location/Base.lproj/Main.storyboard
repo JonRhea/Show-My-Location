@@ -73,30 +73,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EbE-ki-9XG">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EbE-ki-9XG">
                                 <rect key="frame" x="135" y="544" width="190" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Mbx-tj-wYP"/>
-                                    <constraint firstAttribute="width" constant="190" id="kbj-TB-wrG"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="myLatitude:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="a6H-3e-aBP"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dN7-Op-9Ki">
-                                <rect key="frame" x="135" y="590" width="190" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="WWl-pg-ILw"/>
-                                    <constraint firstAttribute="width" constant="190" id="dLj-0L-9TA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3yf-fv-QPI">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3yf-fv-QPI">
                                 <rect key="frame" x="135" y="639" width="190" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="190" id="BTz-ae-FdW"/>
-                                    <constraint firstAttribute="height" constant="30" id="VYk-PK-P8U"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dN7-Op-9Ki">
+                                <rect key="frame" x="135" y="590" width="190" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -105,12 +99,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="IYf-4g-6Jr" firstAttribute="top" secondItem="ALU-qz-UsU" secondAttribute="bottom" constant="30" id="5Dc-q4-ZVv"/>
-                            <constraint firstItem="EbE-ki-9XG" firstAttribute="leading" secondItem="IYf-4g-6Jr" secondAttribute="trailing" constant="8" id="EtB-7q-efT"/>
                             <constraint firstItem="IZd-tP-5Wm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="LaO-p3-OCi"/>
                             <constraint firstItem="3DD-9l-f5C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Lqm-c2-SvN"/>
                             <constraint firstItem="IZd-tP-5Wm" firstAttribute="top" secondItem="3DD-9l-f5C" secondAttribute="bottom" constant="28" id="PJF-v7-O8H"/>
-                            <constraint firstItem="dN7-Op-9Ki" firstAttribute="leading" secondItem="3DD-9l-f5C" secondAttribute="trailing" constant="8" id="WIv-TU-a7S"/>
-                            <constraint firstItem="3yf-fv-QPI" firstAttribute="leading" secondItem="IZd-tP-5Wm" secondAttribute="trailing" constant="8" id="X2Y-FS-I6O"/>
                             <constraint firstItem="ALU-qz-UsU" firstAttribute="top" secondItem="hg8-Kl-PPW" secondAttribute="bottom" constant="25" id="b5J-jt-xWq"/>
                             <constraint firstItem="3DD-9l-f5C" firstAttribute="top" secondItem="IYf-4g-6Jr" secondAttribute="bottom" constant="28" id="kCN-zb-mMc"/>
                             <constraint firstItem="hg8-Kl-PPW" firstAttribute="top" secondItem="3rc-4p-6iV" secondAttribute="bottom" constant="10" id="mzA-eN-qLU"/>
@@ -121,10 +112,16 @@
                             <constraint firstItem="ALU-qz-UsU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yfz-nI-sbn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myAltitude" destination="3yf-fv-QPI" id="wal-1d-GvV"/>
+                        <outlet property="myLatitude" destination="EbE-ki-9XG" id="lEP-k2-QzW"/>
+                        <outlet property="myLongitude" destination="dN7-Op-9Ki" id="Ww7-MD-J9T"/>
+                        <outlet property="myMap" destination="hg8-Kl-PPW" id="1rL-q7-Wus"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="102"/>
+            <point key="canvasLocation" x="131.8840579710145" y="101.78571428571428"/>
         </scene>
     </scenes>
     <resources>
